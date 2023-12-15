@@ -17,9 +17,11 @@ $userID = $_COOKIE['user'];
     require("config.php");
     $travel = $_POST['travel'];
     $TableName = "places";
-    $sql = "INSERT INTO $TableName VALUES ($travel, $userID, NULL, NULL)";
-    $result = $pdo->prepare($sql);
-    $result->execute(array(":td"=>$TravelDate, ":mg"=>$Mileage));
+
+    $sql = "INSERT INTO $TableName ( userID, travel ) VALUES ('$userID', '$travel')";
+    $pdo->exec($sql);
+
+
 
 $pdo = null;
 ?>

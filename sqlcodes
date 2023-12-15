@@ -1,0 +1,12 @@
+CREATE TABLE places(
+userID varchar NOT NULL PRIMARY KEY,
+travel varchar
+);
+
+CREATE TABLE userinfo(
+id VARCHAR(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+userID VARCHAR(20),
+password VARCHAR(20),
+first VARCHAR(20),
+last VARCHAR(20),
+);

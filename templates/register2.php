@@ -15,13 +15,16 @@
         </div>
     </div>
 <?php
+if(isset($_COOKIE['user']))
+$userID = $_COOKIE['user'];
+
     require("config.php");
     $fn = $_POST['first'];
     $ln = $_POST['last'];
     $city = $_POST['city'];
     $TableName = "userinfo";
-    $sql = "INSERT INTO $TableName ( first, last, city ) VALUES ('$fn', '$ln', '$city')";
-    $sql = "UPDATE $TableName SET first='$fn',last='$ln', city='$city',  WHERE userID = '$userID ";
+    $sql = "UPDATE $TableName SET first='$fn', last='$ln', city='$city' WHERE userID = '$userID'";
+
     $pdo->exec($sql);
 
 $pdo = null;

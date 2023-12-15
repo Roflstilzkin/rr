@@ -36,7 +36,7 @@ while ($row = $result->fetch()) {
 $sql = "INSERT INTO $TableName ( userID, password ) VALUES ('$userID', '$password')";
 $pdo->exec($sql);
 
-setcookie("userID", $ID);//set the cookie!
+setcookie("user", $userID);//set the cookie!
 
 
 $pdo = null;

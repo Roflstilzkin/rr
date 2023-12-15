@@ -33,7 +33,7 @@ $pdo = null;
 
 <header></header>
 <p>Success! Your information has been updated!</p>
-<p>Return to the homepage and start your journey!<p>
+<p><a href="index.html">Return</a> to the homepage and start your journey!<p>
 
 
 <div class="footer">

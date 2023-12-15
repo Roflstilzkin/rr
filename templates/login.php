@@ -27,15 +27,9 @@ $password = $_POST['password'];
 $TableName = "userinfo";
 
 $sql = "SELECT * FROM $TableName
-        WHERE user = :us
-        AND password = :pw";
+        WHERE userID = '$userID'
+        AND password = '$password'";
 $result = $pdo->query($sql);
-$result->execute(array(":us"=>$userID,":pw"=>$password));
-
-while ($row = $result->fetch()) {
-    if($row['userID']==$userID)
-    exit("<p> This username is taken. Return to the previous page and choose another");
-}
 
 
 setcookie("user", $userID);//set the cookie!
@@ -46,14 +40,9 @@ $pdo = null;
 ?>
 <header></header>
 <p>Success! You're logged in!</p>
-<p>Please provide us with a few more bits of information about yourself!<p>
+<p>Please <a href="index.html">return</a> to the homepage and continue your journey</p>
 
-<form action="register2.php" method="post">
-    <p>First Name <input type="text" name="first" size="20"/></p>
-    <p>Last Name <input type="text" name="last" size="20"/></p>
-    <p>City <input type="text" name="city" size="20"/></p>
-    <input type="submit" value="submit">
-</form>
+
 
 
 <div class="footer">

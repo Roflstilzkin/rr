@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Roam Ready</title>
+    <title>Travelour</title>
     <link rel="stylesheet" href="../static/styles/styles.css">
     <link rel="stylesheet" href="../static/styles/page2.css">
     <script src="../static/scripts/scripts.js"></script>
@@ -65,7 +65,7 @@ $pdo = null;
     </form>
 
     <div class="footer">
-        <p>&copy; 2023 RoamReady. All rights reserved.</p>
+        <p>&copy; 2023 Travelour. All rights reserved.</p>
     </div>
 </body>
 </html>

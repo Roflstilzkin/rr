@@ -65,13 +65,13 @@ body {
 .signup a {
     margin: 0 10px;
     text-decoration: none;
-    color: var(--primary-300);
+    color: var(--primary-100);
     font-weight: bold;
 }
 
 .signup-btn {
     padding: 5px 15px;
-    background-color: var(--primary-100);
+    background-color: var(--primary-300);
     border-radius: 5px;
 }
 

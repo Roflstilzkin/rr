@@ -26,15 +26,17 @@ $userID = $_POST['user'];
 $password = $_POST['password'];
 $TableName = "userinfo";
 
-$sql = "SELECT * FROM $TableName";
+$sql = "SELECT * FROM $TableName
+        WHERE user = :us
+        AND password = :pw";
 $result = $pdo->query($sql);
+$result->execute(array(":us"=>$userID,":pw"=>$password));
+
 while ($row = $result->fetch()) {
     if($row['userID']==$userID)
     exit("<p> This username is taken. Return to the previous page and choose another");
 }
 
-$sql = "INSERT INTO $TableName ( userID, password ) VALUES ('$userID', '$password')";
-$pdo->exec($sql);
 
 setcookie("user", $userID);//set the cookie!
 

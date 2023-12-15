@@ -17,18 +17,16 @@ $userID = $_COOKIE['user'];
     require("config.php");
     $travel = $_POST['travel'];
     $TableName = "places";
-    $sql = "UPDATE $TableName SET travel='$travel' WHERE userID = '$userID'";
-
-    $pdo->exec($sql);
+    $sql = "INSERT INTO $TableName VALUES ($travel, $userID, NULL, NULL)";
+    $result = $pdo->prepare($sql);
+    $result->execute(array(":td"=>$TravelDate, ":mg"=>$Mileage));
 
 $pdo = null;
 ?>
         <div class="logo">
             <a href="index.html" class="home-link"><img src="../static/images/Logo1.png" alt="Logo" height="50" width="50"></a>
         </div>
-        <div class="signup">
-            <a href="#signup" class="signup-btn">Sign Up</a>
-        </div>
+
     </div>    
     <div class="header">
         <h1>Choose your Adventure</h1>
